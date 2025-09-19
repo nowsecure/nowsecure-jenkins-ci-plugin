@@ -28,24 +28,14 @@
             <f:textbox />
         </f:entry>
         <f:entry title="${%Log Level}" field="logLevel" description="${%LogLevelDesc}">
-            <select name="logLevel">
-                <option value="debug"
-                    selected="${instance.logLevel.equals('debug')? 'true':null}">Debug</option>
-                <option value="info"
-                    selected="${instance.logLevel.equals('info')? 'true':null}">Info</option>
-                <option value="warn"
-                    selected="${instance.logLevel.equals('warn')? 'true':null}">Warn</option>
-                <option value="error"
-                    selected="${instance.logLevel.equals('error')? 'true':null}">Error</option>
-            </select>
+            <f:enum default="INFO">
+                ${it.description}
+            </f:enum>
         </f:entry>
         <f:entry title="${%Analysis Type}" field="analysisType">
-            <select name="analysisType">
-                <option value="static"
-                    selected="${instance.analysisType.equals('static')? 'true':null}">Static</option>
-                <option value="full"
-                    selected="${instance.analysisType.equals('full')? 'true':null}">Full</option>
-            </select>
+            <f:enum default="STATIC">
+                ${it.description}
+            </f:enum>
         </f:entry>
     </f:advanced>
 </j:jelly>

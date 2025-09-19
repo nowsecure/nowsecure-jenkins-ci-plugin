@@ -1,22 +1,16 @@
 package com.nowsecure.models;
 
 public enum AnalysisType {
-    STATIC,
-    FULL;
+    STATIC("static"),
+    FULL("full");
 
-    public static AnalysisType from(String type) {
-        switch (type.toLowerCase()) {
-            case "static":
-                return STATIC;
-            case "full":
-                return FULL;
-            default:
-                throw new IllegalArgumentException("AnalysisType must be 'static' or 'full'");
-        }
+    private final String description;
+
+    AnalysisType(String description) {
+        this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return super.toString().toLowerCase();
+    public String getDescription() {
+        return this.description;
     }
 }

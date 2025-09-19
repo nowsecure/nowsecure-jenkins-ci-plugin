@@ -6,6 +6,9 @@ import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.CredentialsScope;
 import com.cloudbees.plugins.credentials.CredentialsStore;
 import com.cloudbees.plugins.credentials.domains.Domain;
+import com.nowsecure.models.AnalysisType;
+import com.nowsecure.models.LogLevel;
+
 import hudson.model.FreeStyleProject;
 import hudson.model.Result;
 import hudson.util.FormValidation;
@@ -78,15 +81,15 @@ class NowSecurePluginTest {
         var apiUrl = "https://httpbin.org/api";
         var uiUrl = "https://httpbin.org/ui";
         var artifactDir = "dir";
-        var logLevel = "warn";
-        var analysisType = "full";
+        var logLevel = LogLevel.WARN;
+        var analysisType = AnalysisType.FULL;
         var minimumScore = 20;
         var pollingDurationMinutes = 30;
 
         nsStep.setApiHost(apiUrl);
         nsStep.setUiHost(uiUrl);
         nsStep.setArtifactDir(artifactDir);
-        nsStep.setLogLevel("warn");
+        nsStep.setLogLevel(logLevel);
         nsStep.setAnalysisType(analysisType);
         nsStep.setMinimumScore(minimumScore);
         nsStep.setPollingDurationMinutes(pollingDurationMinutes);
